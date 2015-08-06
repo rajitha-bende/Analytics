@@ -1,0 +1,37 @@
+extends ../../layouts/page/analytics
+block controllers
+	script(src='/controllers/analytics/searchcontactsController.js')
+	
+block content
+	.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+		div(data-ng-controller="searchcontactsController")
+			.row.placeholders
+				.col-xs-12.col-sm-12.placeholder
+					.col-xs-6.col-sm-6.placeholder
+						h2 Search Contacts
+						#searchcontacts
+							ul
+								li
+									span(ng-click="getLineChartData('day','searchContactsList','searchcontacts')") 1D
+								li
+									span(ng-click="getLineChartData('week','searchContactsList','searchcontacts')")  1W
+								li
+									span(ng-click="getLineChartData('month','searchContactsList','searchcontacts')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','searchContactsList','searchcontacts')")  6M
+								li
+									span(ng-click="getLineChartData('year','searchContactsList','searchcontacts')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','searchContactsList','searchcontacts')")  Max
+							svg(style='height: 380px;')
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Location
+					#map
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Devices
+					.col-xs-6.col-sm-6.placeholder
+						h5 Devices
+						svg#deviceChart
+					.col-xs-6.col-sm-6.placeholder
+						h5 Browsers
+						svg#browserChart

@@ -1,0 +1,76 @@
+include ../../mixins/chartSummary
+
+div.row
+	div.col-xs-12.col-sm-7.col-md-7.col-lg-4
+		h1.page-title.txt-color-blueDark
+			i.fa-fw.fa.fa-home
+			| Dashboard
+			span > My Dashboard
+	div.col-xs-12.col-sm-5.col-md-5.col-lg-8(data-ng-controller="breadCrumbController")
+		+breadCrumbChart()
+section#widget-grid
+	div.row
+		article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			div#wid-id-0.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+				header
+					span.widget-icon
+						i.fa.fa-bar-chart-o
+					h2 Registered Members
+					i#popoverMembers.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='A cumulative chart showing the number of users that have an account in flickmi (members). The most recent interval indicates the current total member count. Incremented when a user creates an account and decremented when a member deletes an account.', data-original-title='', title='')
+					div.widget-toolbar
+						div.btn-group
+							button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+								| Day 
+								i.fa.fa-caret-down
+							ul.dropdown-menu.pull-right
+								li
+									a(ng-click='getChartData("day","registeredMembers","registeredMemChart")') Day
+								li
+									a(ng-click='getChartData("week","registeredMembers","registeredMemChart")') Week
+								li
+									a(ng-click='getChartData("month","registeredMembers","registeredMemChart")') Month
+								li
+									a(ng-click='getChartData("sixmonths","registeredMembers","registeredMemChart")') 6 Months
+								li
+									a(ng-click='getChartData("year","registeredMembers","registeredMemChart")') Year
+				div
+					// widget edit box
+					div.jarviswidget-editbox
+					// This area used as dropdown edit box
+					div#registeredMemChart.widget-body.no-padding
+						svg(style='height: 380px;')
+		article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+			div#wid-id-1.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+				header
+					span.widget-icon
+						i.fa.fa-bar-chart-o
+					h2 Contacts Shared
+					i#popoverShared.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='A time series chart showing the number of times members have shared their contact details within the selected period. A “Share” is sending persona(s) by entering an email/phone number or responding to a connection request.', data-original-title='', title='')
+					div.widget-toolbar
+						div.btn-group
+							button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+								| Day 
+								i.fa.fa-caret-down
+							ul.dropdown-menu.pull-right
+								li
+									a(ng-click='getChartData("day","contactsShared","contactsSharedChart")') Day
+								li
+									a(ng-click='getChartData("week","contactsShared","contactsSharedChart")') Week
+								li
+									a(ng-click='getChartData("month","contactsShared","contactsSharedChart")') Month
+								li
+									a(ng-click='getChartData("sixmonths","contactsShared","contactsSharedChart")') 6 Months
+								li
+									a(ng-click='getChartData("year","contactsShared","contactsSharedChart")') Year
+				div
+					// widget edit box
+					div.jarviswidget-editbox
+					// This area used as dropdown edit box
+					div#contactsSharedChart.widget-body.no-padding
+						svg(style='height: 380px;')
+
+script(type='text/javascript').
+	
+	pageSetUp();
+	$('#popoverMembers').popover({ trigger: "hover focus" });
+	$('#popoverShared').popover({ trigger: "hover focus" });

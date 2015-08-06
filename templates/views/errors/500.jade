@@ -1,0 +1,7 @@
+extends ../../layouts/page/splash
+
+block content
+	.container
+		h1.page-header-heading!=errorTitle || 'Error (500)'
+		if 'object' == typeof errorMsg
+			div(style='margin: 30px 0;').debug!= htmlStringify(errorMsg)

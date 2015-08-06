@@ -1,0 +1,37 @@
+extends ../../layouts/page/analytics
+block controllers
+	script(src='/controllers/analytics/sendcontactController.js')
+	
+block content
+	.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+		div(data-ng-controller="sendcontactController")
+			.row.placeholders
+				.col-xs-12.col-sm-12.placeholder
+					.col-xs-6.col-sm-6.placeholder
+						h2 Send Contact
+						#sendContacts
+							ul
+								li
+									span(ng-click="getLineChartData('day','contactsShared','sendContacts')") 1D
+								li
+									span(ng-click="getLineChartData('week','contactsShared','sendContacts')")  1W
+								li
+									span(ng-click="getLineChartData('month','contactsShared','sendContacts')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','contactsShared','sendContacts')")  6M
+								li
+									span(ng-click="getLineChartData('year','contactsShared','sendContacts')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','contactsShared','sendContacts')")  Max
+							svg(style='height: 380px;')
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Location
+					#map
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Devices
+					.col-xs-6.col-sm-6.placeholder
+						h5 Devices
+						svg#deviceChart
+					.col-xs-6.col-sm-6.placeholder
+						h5 Browsers
+						svg#browserChart

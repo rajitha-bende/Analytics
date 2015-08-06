@@ -1,0 +1,156 @@
+extends ../../layouts/page/analytics
+
+block content
+	header#header
+		#logo-group
+			//PLACE YOUR LOGO HERE 
+			span#logo
+				img(src='images/flickmi-inverted.png', alt='Flickmi Analytics')
+
+		// pulled right: nav area
+		div.pull-right
+			// collapse menu button
+			div#hide-menu.btn-header.pull-right
+				span
+					a(href='javascript:void(0);', data-action='toggleMenu', title='Collapse Menu')
+						i.fa.fa-reorder
+			div#fullscreen.btn-header.transparent.pull-right
+				span
+					a(href='javascript:void(0);', data-action='launchFullscreen', title='Full Screen')
+						i.fa.fa-arrows-alt
+
+	aside#left-panel
+		.login-info
+			navigation
+				nav:item(data-view='/dashboard', data-icon='fa fa-lg fa-fw fa-bar-chart-o', title='Analytics')
+		navigation
+			nav:item(data-view='/dashboard', data-icon='fa fa-lg fa-fw fa-home', title='Dashboard')
+			nav:group(data-icon='fa fa-lg fa-fw fa-users', title='Usage')
+				nav:item(data-view='/adoption', title='Adoption')
+				nav:item(data-view='/userstats', title='User Stats')
+				nav:item(data-view='/personastats', title='Persona Stats')
+				nav:item(data-view='/activity', title='Activity')
+				nav:item(data-view='/realtime', title='Real-Time')
+			nav:item(data-view='/', data-icon='fa fa-lg fa-fw fa-code', title='Development')
+			nav:item(data-view='/', data-icon='fa fa-lg fa-fw fa-hdd-o', title='Platform')
+		span.minifyme(data-action='minifyMenu')
+			i.fa.fa-arrow-circle-left.hit
+
+	#main(role='main')
+		div#ribbon(data-ribbon='')
+			// breadcrumb
+			breadcrumb
+			// This is auto generated
+			// end breadcrumb
+		div#content.view-animate(data-ng-view='')
+
+
+	// Link to Google CDN's jQuery + jQueryUI; fall back to local 
+	script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+	//script
+	//	if (!window.jQuery)
+	//		document.write('<script src="js/libs/jquery-2.0.2.min.js"></script>');
+
+
+	script(src='//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js')
+	//script
+	//	if (!window.jQuery)
+	//		document.write('<script src="js/libs/jquery-ui-1.10.3.min.js"></script>');
+
+
+	// JS TOUCH : include this plugin for mobile drag / drop touch events
+	script(src='/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js')
+
+	//BOOTSTRAP JS
+	script(src='/js/bootstrap/bootstrap.min.js')
+
+	//CUSTOM NOTIFICATION 
+	script(src='/js/notification/SmartNotification.min.js')
+
+	//JARVIS WIDGETS 
+	script(src='/js/smartwidgets/jarvis.widget.min.js')
+
+	//EASY PIE CHARTS
+	script(src='/js/plugin/easy-pie-chart/jquery.easy-pie-chart.min.js')
+
+	//SPARKLINES 
+	script(src='/js/plugin/sparkline/jquery.sparkline.min.js')
+
+	//JQUERY VALIDATE
+	script(src='/js/plugin/jquery-validate/jquery.validate.min.js')
+
+	//JQUERY MASKED INPUT
+	script(src='/js/plugin/masked-input/jquery.maskedinput.min.js')
+
+	//JQUERY SELECT2 INPUT
+	script(src='/js/plugin/select2/select2.min.js')
+
+	//browser msie issue fix 
+	script(src='/js/plugin/msie-fix/jquery.mb.browser.min.js')
+
+	//FastClick: For mobile devices: you can disable this in app.js 
+	script(src='/js/plugin/fastclick/fastclick.min.js')
+
+
+	//AngularJS
+	script(src='/js/libs/angular/angular.js')
+	script(src='/js/libs/angular/angular-route.js')
+	script(src='/js/libs/angular/angular-animate.js')
+	script(src='/js/libs/angular/ui-bootstrap-custom-tpls-0.11.0.js')
+
+	//MAIN APP JS FILE 
+	//script(src='/js/flickmi.js')
+
+	//MAIN APP JS FILE
+	script(src='/js/app.js')
+	//MAIN ANGULAR JS FILE 
+	script(src="/js/ng/ng.app.js")
+	script(src="/js/ng/ng.controllers.js")
+	script(src="/js/ng/ng.directives.js")
+
+	script(src='/controllers/analytics/indexController.js')
+	script(src='/controllers/analytics/breadCrumbController.js')
+	script(src='/controllers/analytics/userstatsController.js')
+	script(src='/controllers/analytics/adoptionController.js')
+	script(src="/controllers/analytics/personastatsController.js")
+	script(src="/controllers/analytics/actiondataController.js")
+
+	// PLUNKER
+	script(src="/js/ng/plunker.js")
+
+	//Chart
+	script(src='/js/lib/charts/lib/d3.v3.js')
+	script(src='/js/lib/charts/lib/d3.v3.min.js')
+	script(src='/js/lib/charts/lib/queue.v1.min.js')
+	script(src='/js/lib/charts/lib/topojson.v1.min.js')
+	script(src='/js/lib/charts/lib/d3-funnel-charts.min.js')
+	script(src='/js/lib/charts/src/nv.d3.js')
+	script(src='/js/lib/charts/src/tooltip.js')
+	script(src='/js/lib/charts/src/utils.js')
+	script(src='/js/lib/charts/src/interactiveLayer.js')
+	script(src='/js/lib/charts/src/models/legend.js')
+	script(src='/js/lib/charts/src/models/axis.js')
+	script(src='/js/lib/charts/src/models/scatter.js')
+	script(src='/js/lib/charts/src/models/pie.js')
+	script(src='/js/lib/charts/src/models/pieChart.js')
+	script(src='/js/lib/charts/src/models/line.js')
+	script(src='/js/lib/charts/src/models/lineChart.js')
+	script(src='/js/lib/charts/src/models/multiBarHorizontal.js')
+	script(src='/js/lib/charts/src/models/multiBarHorizontalChart.js')
+
+
+
+
+		
+											
+						
+							
+							
+
+
+            
+
+        
+        
+
+	

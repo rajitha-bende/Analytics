@@ -1,0 +1,37 @@
+extends ../../layouts/page/analytics
+block controllers
+	script(src='/controllers/analytics/createpersonaController.js')
+	
+block content
+	.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+		div(data-ng-controller="createpersonaController")
+			.row.placeholders
+				.col-xs-12.col-sm-12.placeholder
+					.col-xs-6.col-sm-6.placeholder
+						h2 Create Persona
+						#createpersona
+							ul
+								li
+									span(ng-click="getLineChartData('day','createPersona','createpersona')") 1D
+								li
+									span(ng-click="getLineChartData('week','createPersona','createpersona')")  1W
+								li
+									span(ng-click="getLineChartData('month','createPersona','createpersona')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','createPersona','createpersona')")  6M
+								li
+									span(ng-click="getLineChartData('year','createPersona','createpersona')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','createPersona','createpersona')")  Max
+							svg(style='height: 380px;')
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Location
+					#map
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Devices
+					.col-xs-6.col-sm-6.placeholder
+						h5 Devices
+						svg#deviceChart
+					.col-xs-6.col-sm-6.placeholder
+						h5 Browsers
+						svg#browserChart

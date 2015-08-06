@@ -1,0 +1,12 @@
+extends ../../layouts/page/analytics
+
+block controllers
+	script(src='/socket.io/socket.io.js')
+	script(src='/controllers/analytics/realtimeController.js')
+
+block content
+	h2() Real Time Analytics
+	h4() Event Log
+	div(data-ng-controller="realtimeController").log.container
+		div(data-ng-repeat="message in log").message.container
+			p() {{message}}

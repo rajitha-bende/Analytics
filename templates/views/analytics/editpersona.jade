@@ -1,0 +1,158 @@
+extends ../../layouts/page/analytics
+block controllers
+	script(src='/controllers/analytics/editpersonaController.js')
+	
+block content
+	.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+		div(data-ng-controller="editpersonaController")
+			.row.placeholders
+				.col-xs-12.col-sm-12.placeholder
+					.col-xs-6.col-sm-6.placeholder
+						h2 Edit Persona
+						#editpersona
+							ul
+								li
+									span(ng-click="getLineChartData('day','editPersona','editpersona')") 1D
+								li
+									span(ng-click="getLineChartData('week','editPersona','editpersona')")  1W
+								li
+									span(ng-click="getLineChartData('month','editPersona','editpersona')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','editPersona','editpersona')")  6M
+								li
+									span(ng-click="getLineChartData('year','editPersona','editpersona')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','editPersona','editpersona')")  Max
+							svg(style='height: 380px;')
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Location
+					#map
+				.col-xs-6.col-sm-6.placeholder
+					h4 User Devices
+					.col-xs-6.col-sm-6.placeholder
+						h5 Devices
+						svg#deviceChart
+					.col-xs-6.col-sm-6.placeholder
+						h5 Browsers
+						svg#browserChart
+				.col-xs-12.col-sm-12.placeholder
+					.col-xs-3.col-sm-3.placeholder
+						h4 Add Field
+						#addfield
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_AddField','addfield')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_AddField','addfield')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_AddField','addfield')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_AddField','addfield')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_AddField','addfield')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_AddField','addfield')")  Max
+							svg(style='height: 380px;')
+					.col-xs-3.col-sm-3.placeholder
+						h4 Field Values
+						#addfieldvalues
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_EditFieldValue','addfieldvalues')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_EditFieldValue','addfieldvalues')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_EditFieldValue','addfieldvalues')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_EditFieldValue','addfieldvalues')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_EditFieldValue','addfieldvalues')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_EditFieldValue','addfieldvalues')")  Max
+							svg(style='height: 380px;')
+					.col-xs-3.col-sm-3.placeholder
+						h4 Field Label
+						#editfieldlabel
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_EditFieldLabel','editfieldlabel')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_EditFieldLabel','editfieldlabel')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_EditFieldLabel','editfieldlabel')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_EditFieldLabel','editfieldlabel')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_EditFieldLabel','editfieldlabel')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_EditFieldLabel','editfieldlabel')")  Max
+							svg(style='height: 380px;')
+					.col-xs-3.col-sm-3.placeholder
+						h4 Select Field
+						#selectfield
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_SelectField','selectfield')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_SelectField','selectfield')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_SelectField','selectfield')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_SelectField','selectfield')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_SelectField','selectfield')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_SelectField','selectfield')")  Max
+							svg(style='height: 380px;')
+					.col-xs-3.col-sm-3.placeholder
+						h4 Deselect Field
+						#deselectfield
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_DeSelectField','deselectfield')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_DeSelectField','deselectfield')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_DeSelectField','deselectfield')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_DeSelectField','deselectfield')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_DeSelectField','deselectfield')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_DeSelectField','deselectfield')")  Max
+							svg(style='height: 380px;')
+					
+					.col-xs-3.col-sm-3.placeholder
+						h4 Rename Persona
+						#renamepersona
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_RenamePersona','renamepersona')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_RenamePersona','renamepersona')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_RenamePersona','renamepersona')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_RenamePersona','renamepersona')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_RenamePersona','renamepersona')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_RenamePersona','renamepersona')")  Max
+							svg(style='height: 380px;')
+					.col-xs-3.col-sm-3.placeholder
+						h4 Change Color
+						#changecolor
+							ul
+								li
+									span(ng-click="getLineChartData('day','EditPersona_ChangeColour','changecolor')") 1D
+								li
+									span(ng-click="getLineChartData('week','EditPersona_ChangeColour','changecolor')")  1W
+								li
+									span(ng-click="getLineChartData('month','EditPersona_ChangeColour','changecolor')")  1M
+								li
+									span(ng-click="getLineChartData('sixmonths','EditPersona_ChangeColour','changecolor')")  6M
+								li
+									span(ng-click="getLineChartData('year','EditPersona_ChangeColour','changecolor')")  1Y
+								li
+									span(ng-click="getLineChartData('Max','EditPersona_ChangeColour','changecolor')")  Max
+							svg(style='height: 380px;')

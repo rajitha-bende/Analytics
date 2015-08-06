@@ -1,0 +1,34 @@
+{
+	"name": "flickmi",
+	"version": "0.0.2",
+	"private": true,
+	"dependencies": {
+		"underscore": "latest",
+		"async": "latest",
+		"connect": "2.12.0",
+		"connect-mongo": "latest",
+		"cookie": "0.1.0",
+		"crypto": "latest",
+		"email-templates": "latest",
+		"express": "3.4.6",
+		"jade": "~1.1.5",
+		"mongodb": "latest",
+		"nodemailer": "latest",
+		"request": "latest",
+		"cjson": "latest",
+		"node-v8-clone": "latest",
+		"ua-parser-js": "latest",
+		"twilio": "latest",
+		"newrelic" : "latest",
+		"socket.io": "^1.0.4",
+		"js-code-quality": "git+ssh://git@gitlab.hedloc.local:hedloc/js-code-quality.git",
+		"keystone": "git+ssh://git@gitlab.hedloc.local:flickmi/keystone.git#flickmi"
+	},
+	"engines": {
+		"node": "0.10.x",
+		"npm": "1.3.x"
+	},
+	"scripts": {
+		"start": "flickmi.js"
+	}
+}

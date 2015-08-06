@@ -1,0 +1,25 @@
+mixin breadCrumbChart()
+	ul#sparks
+		li.sparks-info
+			h5
+				| Members
+				span.txt-color-blue
+					i.fa.fa-male
+					|  {{totalRegisteredMem}}
+			div.sparkline.account-info.txt-color-purple.hidden-mobile.hidden-md.hidden-sm(data-sparkline-type='bar')
+		li.sparks-info
+			h5
+				| Contacts Shared
+				span.txt-color-purple
+					i.fa.fa-share
+					|  {{totalShared}}
+			div.sparkline.contact-shared.txt-color-purple.hidden-mobile.hidden-md.hidden-sm
+		li.sparks-info
+			h5
+				| Active - 24HR
+				span.txt-color-blue
+					i.fa.fa-heart
+					|  {{active24Hr}}
+			div.easy-pie-chart.txt-color-blue.easyPieChart.activeusers.hidden-mobile.hidden-md.hidden-sm(data-percent='', data-pie-size='40')
+				span.percent.percent-sign.font-xs 0
+		

@@ -1,0 +1,7 @@
+extends ../../layouts/page/splash
+
+block content
+	.container
+		h1!=errorTitle || 'Not found (404)'
+		if 'object' == typeof errorMsg
+			div(style='margin: 30px 0;').debug!= htmlStringify(errorMsg)

@@ -1,0 +1,184 @@
+include ../../mixins/chartSummary
+div.row
+	div.col-xs-12.col-sm-7.col-md-7.col-lg-4
+		h1.page-title.txt-color-blueDark
+			i.fa-fw.fa.fa-users
+			| Usage
+			span > Adoption 
+	div.col-xs-12.col-sm-5.col-md-5.col-lg-8(data-ng-controller="breadCrumbController")
+		+breadCrumbChart()
+
+div
+	section#widget-grid
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-1.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 User Activity
+						i#popoverUserActivity.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='All members of flickmi are grouped by when they last generated an event.  The counts/percentages are cumulative, so the “7 Days” summary includes members active in the last “24 hours” as well for example.', data-original-title='', title='')
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#useractivity.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-2.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Sign-ins
+						i#popoverSignIn.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='A time series chart showing members successfully signing in to flickmi within the selected period. “Sign-ins” include users completing the sign-in form, as well as the automatic sign-ins that occur when unregistered users become members.', data-original-title='', title='')
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","totalLogins","totalSigninChart")') Day
+									li
+										a(ng-click='getChartData("week","totalLogins","totalSigninChart")') Week
+									li
+										a(ng-click='getChartData("month","totalLogins","totalSigninChart")') Month
+									li
+										a(ng-click='getChartData("sixmonths","totalLogins","totalSigninChart")') 6 Months
+									li
+										a(ng-click='getChartData("year","totalLogins","totalSigninChart")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#totalSigninChart.widget-body.no-padding
+							svg(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-3.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Devices
+						i#popoverDevices.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='The total number of flickmi events generated from each device. Selecting specific devices will act as a filter on the “Browsers” chart.', data-original-title='', title='')
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div.widget-body.no-padding
+							svg#deviceChart(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-4.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Browsers
+						i#popoverBrowsers.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='The total number of flickmi events generated from each browser. Selecting specific browsers will act as a filter on the “Devices” chart.', data-original-title='', title='')
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div.widget-body.no-padding
+							svg#browserChart(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-5.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Accounts opened/closed for period 
+						i#popoverAccount.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='A time series chart showing the creation and closure of accounts within the selected period. “Created” shows users signing up via the registration form or in response to contacts from a member. “Closed” incudes either suspending or deleting an account.', data-original-title='', title='')
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","accountclosedoropened","Accountsopenedclosed")') Day
+									li
+										a(ng-click='getChartData("week","accountclosedoropened","Accountsopenedclosed")') Week
+									li
+										a(ng-click='getChartData("month","accountclosedoropened","Accountsopenedclosed")') Month
+									li
+										a(ng-click='getChartData("sixmonths","accountclosedoropened","Accountsopenedclosed")') 6 Months
+									li
+										a(ng-click='getChartData("year","accountclosedoropened","Accountsopenedclosed")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#Accountsopenedclosed.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-6.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Registration Method
+						i#popoverRegMethod.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='The channel that members used to register for flickmi within the selected period.', data-original-title='', title='')
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getPieChartData("day","registrationMethod","regMethodChart")') Day
+									li
+										a(ng-click='getPieChartData("week","registrationMethod","regMethodChart")') Week
+									li
+										a(ng-click='getPieChartData("month","registrationMethod","regMethodChart")') Month
+									li
+										a(ng-click='getPieChartData("sixmonths","registrationMethod","regMethodChart")') 6 Months
+									li
+										a(ng-click='getPieChartData("year","registrationMethod","regMethodChart")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div.widget-body.no-padding
+							svg#regMethodChart(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-7.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Conversion Metrics
+						i#popoverConversionMet.fa.fa-question-circle(data-toggle='popover', data-placement='bottom', data-content='“Shared” shows the number of times members have shared details with non-members. “Viewed” shows the number of times non-members have viewed shared details for the first time. “Returned” shows the number of non-members that provided their details, either by responding or registering. “Joined” shows only the non-members that registered in response to receiving contacts.', data-original-title='', title='')
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getFunnelChartData("day","CM_SharedOCR","funnelContainer")') Day
+									li
+										a(ng-click='getFunnelChartData("week","CM_SharedOCR","funnelContainer")') Week
+									li
+										a(ng-click='getFunnelChartData("month","CM_SharedOCR","funnelContainer")') Month
+									li
+										a(ng-click='getFunnelChartData("sixmonths","CM_SharedOCR","funnelContainer")') 6 Months
+									li
+										a(ng-click='getFunnelChartData("year","CM_SharedOCR","funnelContainer")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#funnelContainer.with-3d-shadow.with-transitions.widget-body.no-padding
+							svg(style='height:380px;')
+
+
+script(type='text/javascript').
+
+	pageSetUp();
+	$('#popoverUserActivity').popover({ trigger: "hover focus" });
+	$('#popoverSignIn').popover({ trigger: "hover focus" });
+	$('#popoverDevices').popover({ trigger: "hover focus" });
+	$('#popoverBrowsers').popover({ trigger: "hover focus" });
+	$('#popoverAccount').popover({ trigger: "hover focus" });
+	$('#popoverRegMethod').popover({ trigger: "hover focus" });
+	$('#popoverConversionMet').popover({ trigger: "hover focus" });
+

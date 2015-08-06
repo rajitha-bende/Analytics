@@ -1,0 +1,55 @@
+{
+    "server":{
+        "port": 3010,
+        "certificateLocation": {
+            "key": "/home/ssl/key.pem",
+            "cert": "/home/ssl/cert.pem"
+        },
+        "url": "https://flickmi.com/",
+        "protocol": "http",
+        "host": ""
+    },
+
+    "mongo":{
+        "port": 27017,
+		     "host": "10.1.4.67",
+        "databases": {
+            "application": "analyticsapplication",
+            "keystone": "analyticskeystone",
+            "session": "analyticssessions"
+        }
+    },
+
+	"websockets":{
+		"port": 3000,
+		"host": "www.flickmi.com",
+		"protocol": "http"
+	},
+
+    "urls" : {
+        "public": [
+            "analytics"
+        ],
+        "roleSecured": {
+            "admin" : ["/keystone"]
+        }
+    },
+
+    "session":{
+        "secret": "kortti",
+        "key": "express.uid"
+    },
+
+    "keystone":{
+        "favicon": "public/favicon.ico",
+        "less": "public",
+        "static": "public",
+        "name": "flickmi",
+        "brand": "flickmi",
+        "back": "me",
+        "sockets": true,
+        "auto update": true,
+        "views": "templates/views",
+        "view engine": "jade"
+    }
+}

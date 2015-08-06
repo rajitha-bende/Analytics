@@ -1,0 +1,12 @@
+node_modules/*
+depricated/*
+image_upload/*
+.DS_Store
+bin/*
+target/
+.settings/
+.idea/
+.svn/
+*.classpath
+*.project
+*.iml

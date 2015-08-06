@@ -1,0 +1,48 @@
+<!-- User info -->
+			<div class="login-info">
+				<!--<div>
+					<div data-ng-transclude="">
+						<div data-ng-class="{active: isActive(view)}" data-view="/dashboard" data-icon="fa fa-lg fa-fw fa-bar-chart-o" title="Analytics" class="ng-scope ng-isolate-scope" style="list-style: none;">					
+							<a href="#/dashboard" target="_self" title="Analytics">						
+								<!-- ngIf: hasIcon -->
+				<!--<i  class="fa fa-lg fa-fw fa-bar-chart-o"><!-- ngIf: hasIconCaption -->
+				<!--</i>--><!-- end ngIf: hasIcon -->						
+								<!--<span ng-class="{'menu-item-parent': !isChild}" data-localize="Analytics" class="ng-isolate-scope ng-binding menu-item-parent" style="margin-left: 7px;"> Analytics </span>					
+								<span data-ng-transclude=""></span>					
+							</a>				
+						</div>
+
+				</div></div>-->
+				<navigation>
+					<nav:item  data-view="/dashboard" data-icon="fa fa-lg fa-fw fa-bar-chart-o" title="Analytics" />
+					</nav:item>
+				</navigation>
+				<!--<span> <!-- User image size is adjusted inside CSS, it should stay as is --> 
+					
+					<!--<a href="/" id="show-shortcut">
+						<!--<img src="img/avatars/sunny.png" alt="me" class="online" /> -->
+						<!--<i  class="fa fa-lg fa-fw fa-bar-chart-o"></i>
+						<span>
+							Analytics 
+						</span>
+						
+					</a> 
+					
+				</span>-->
+			</div>
+			<navigation>
+				<nav:item data-view="/dashboard" data-icon="fa fa-lg fa-fw fa-home" title="Dashboard" />
+				<nav:group data-icon="fa fa-lg fa-fw fa-users" title="Usage" >
+					<nav:item data-view="/adoption" title="Adoption" />
+					<nav:item data-view="/userstats" title="User Stats" />
+					<nav:item data-view="/personastats" title="Persona Stats" />
+					<nav:item data-view="/activity" title="Activity" />
+					<nav:item data-view="/realtime" title="Real-Time" />
+				</nav:group>
+				<nav:item data-view="/" data-icon="fa fa-lg fa-fw fa-code" title="Development">
+				</nav:item>
+				<nav:item data-view="/" data-icon="fa fa-lg fa-fw fa-hdd-o" title="Platform">
+				</nav:item>
+				
+			</navigation>
+			<span class="minifyme" data-action="minifyMenu"> <i class="fa fa-arrow-circle-left hit"></i> </span>

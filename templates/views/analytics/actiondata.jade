@@ -1,0 +1,272 @@
+include ../../mixins/chartSummary
+div.row
+	div.col-xs-12.col-sm-7.col-md-7.col-lg-4
+		h1.page-title.txt-color-blueDark
+			i.fa-fw.fa.fa-users
+			| Usage
+			span > Activity 
+	div.col-xs-12.col-sm-5.col-md-5.col-lg-8(data-ng-controller="breadCrumbController")
+		+breadCrumbChart()
+div
+	section#widget-grid
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-1.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Sign In
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","totalLogins","signIn")') Day
+									li
+										a(ng-click='getChartData("week","totalLogins","signIn")') Week
+									li
+										a(ng-click='getChartData("month","totalLogins","signIn")') Month
+									li
+										a(ng-click='getChartData("sixmonths","totalLogins","signIn")') 6 Months
+									li
+										a(ng-click='getChartData("year","totalLogins","signIn")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#signIn.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-2.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Sign Out
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","totalLogouts","signOut")') Day
+									li
+										a(ng-click='getChartData("week","totalLogouts","signOut")') Week
+									li
+										a(ng-click='getChartData("month","totalLogouts","signOut")') Month
+									li
+										a(ng-click='getChartData("sixmonths","totalLogouts","signOut")') 6 Months
+									li
+										a(ng-click='getChartData("year","totalLogouts","signOut")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#signOut.widget-body.no-padding
+							svg(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-3.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Send Contact
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","contactsShared","sendContacts")') Day
+									li
+										a(ng-click='getChartData("week","contactsShared","sendContacts")') Week
+									li
+										a(ng-click='getChartData("month","contactsShared","sendContacts")') Month
+									li
+										a(ng-click='getChartData("sixmonths","contactsShared","sendContacts")') 6 Months
+									li
+										a(ng-click='getChartData("year","contactsShared","sendContacts")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#sendContacts.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-4.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Create Persona
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","createPersona","createPersona")') Day
+									li
+										a(ng-click='getChartData("week","createPersona","createPersona")') Week
+									li
+										a(ng-click='getChartData("month","createPersona","createPersona")') Month
+									li
+										a(ng-click='getChartData("sixmonths","createPersona","createPersona")') 6 Months
+									li
+										a(ng-click='getChartData("year","createPersona","createPersona")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#createPersona.widget-body.no-padding
+							svg(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-5.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Edit Persona
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","editPersona","editPersona")') Day
+									li
+										a(ng-click='getChartData("week","editPersona","editPersona")') Week
+									li
+										a(ng-click='getChartData("month","editPersona","editPersona")') Month
+									li
+										a(ng-click='getChartData("sixmonths","editPersona","editPersona")') 6 Months
+									li
+										a(ng-click='getChartData("year","editPersona","editPersona")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#editPersona.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-6.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Delete Persona
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","deletePersona","deletePersona")') Day
+									li
+										a(ng-click='getChartData("week","deletePersona","deletePersona")') Week
+									li
+										a(ng-click='getChartData("month","deletePersona","deletePersona")') Month
+									li
+										a(ng-click='getChartData("sixmonths","deletePersona","deletePersona")') 6 Months
+									li
+										a(ng-click='getChartData("year","deletePersona","deletePersona")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#deletePersona.widget-body.no-padding
+							svg(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-7.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 View Contacts
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","viewContactsList","viewContacts")') Day
+									li
+										a(ng-click='getChartData("week","viewContactsList","viewContacts")') Week
+									li
+										a(ng-click='getChartData("month","viewContactsList","viewContacts")') Month
+									li
+										a(ng-click='getChartData("sixmonths","viewContactsList","viewContacts")') 6 Months
+									li
+										a(ng-click='getChartData("year","viewContactsList","viewContacts")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#viewContacts.widget-body.no-padding
+							svg(style='height: 380px;')
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-8.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Search/Filter Contacts
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","searchContactsList","searchContacts")') Day
+									li
+										a(ng-click='getChartData("week","searchContactsList","searchContacts")') Week
+									li
+										a(ng-click='getChartData("month","searchContactsList","searchContacts")') Month
+									li
+										a(ng-click='getChartData("sixmonths","searchContactsList","searchContacts")') 6 Months
+									li
+										a(ng-click='getChartData("year","searchContactsList","searchContacts")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#searchContacts.widget-body.no-padding
+							svg(style='height: 380px;')
+		div.row
+			article.col-xs-12.col-sm-6.col-md-6.col-lg-6
+				div#wid-id-9.jarviswidget(data-widget-collapsed='false', data-widget-colorbutton='false', data-widget-deletebutton='false', data-widget-editbutton='false')
+					header
+						span.widget-icon
+							i.fa.fa-bar-chart-o
+						h2 Delete Contact
+						div.widget-toolbar
+							div.btn-group
+								button.btn.dropdown-toggle.btn-xs.btn-warning(data-toggle='dropdown')
+									| Day 
+									i.fa.fa-caret-down
+								ul.dropdown-menu.pull-right
+									li
+										a(ng-click='getChartData("day","deleteContact","deleteContacts")') Day
+									li
+										a(ng-click='getChartData("week","deleteContact","deleteContacts")') Week
+									li
+										a(ng-click='getChartData("month","deleteContact","deleteContacts")') Month
+									li
+										a(ng-click='getChartData("sixmonths","deleteContact","deleteContacts")') 6 Months
+									li
+										a(ng-click='getChartData("year","deleteContact","deleteContacts")') Year
+					div
+						// widget edit box
+						div.jarviswidget-editbox
+						// This area used as dropdown edit box
+						div#deleteContacts.widget-body.no-padding
+							svg(style='height: 380px;')
+
+script(type='text/javascript').
+	pageSetUp();
+	// PAGE RELATED SCRIPTS
